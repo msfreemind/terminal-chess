@@ -12,10 +12,11 @@ class Display
 
   def render
     system("clear")
-    print "\n  0 1 2 3 4 5 6 7"
+    print "\n"
+    # (0..7).each { |col| print "  #{col}" }
 
     (0..7).each do |row|
-      print "\n#{row}"
+      print "\n|"
       (0..7).each do |col|
         render_pos(row, col)
       end
@@ -34,12 +35,12 @@ class Display
     print " "
     if [row, col] == @cursor.cursor_pos
       if @cursor.selected
-        print "#{symbol}".colorize(:background => :red)
+        print "#{symbol} ".colorize(:background => :red)
       else
-        print "#{symbol}".colorize(:background => :blue)
+        print "#{symbol} ".colorize(:background => :blue)
       end
     else        
-      print "#{symbol}"
+      print "#{symbol} "
     end
   end
 end

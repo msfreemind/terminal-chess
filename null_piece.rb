@@ -13,6 +13,6 @@ class NullPiece < Piece
   end
 
   def symbol
-    return "□"
+    return " "
   end
 end
